@@ -16,10 +16,6 @@ public class URL {
     @Column(unique = true, nullable = false)
     private String shortenedUrl;
 
-    @ManyToOne()
-    @JoinColumn(name = "user_id")
-    private User user;
-
     public Integer getId() {
         return id;
     }
@@ -32,10 +28,6 @@ public class URL {
         return originalUrl;
     }
 
-    public User getUser() {
-        return user;
-    }
-
     public void setOriginalUrl(String originalUrl) {
         this.originalUrl = originalUrl;
     }
@@ -46,9 +38,5 @@ public class URL {
 
     public void setShortenedUrl(String shortenedUrl) {
         this.shortenedUrl = shortenedUrl;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }
